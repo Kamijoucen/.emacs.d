@@ -52,4 +52,6 @@ flycheck_*.el
 
 *.iml
 
+/custom.el
+
 
