@@ -1,7 +1,7 @@
 (setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
-                         ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-                         ("org"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+                         ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;;                         ("org"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 (package-initialize) ;; You might already have this line
 
 (setq package-check-signature nil)
@@ -27,5 +27,7 @@
       use-package-verbose t)
 
 (require 'use-package)
+
+(fido-mode t)
 
 (provide 'init-elpa)
