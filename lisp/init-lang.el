@@ -1,4 +1,3 @@
-
 (use-package eglot
   :hook ((go-mode
           java-mode) . eglot-ensure)
@@ -8,7 +7,6 @@
          ("C-c e q" . #'eglot-code-action-quickfix))
   :config
   ;; (setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
-  (add-to-list 'eglot-server-programs '(web-mode "vls"))
   (defun eglot-actions-before-save()
     (add-hook 'before-save-hook
               (lambda ()

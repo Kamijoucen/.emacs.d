@@ -1,6 +1,3 @@
-
-
-;; set gc time
 (setq gc-cons-threshold most-positive-fixnum)
 (add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 800000)))
 
@@ -26,3 +23,5 @@
 
 ;; kay bind
 (require 'init-kb)
+
+(provide 'init)
