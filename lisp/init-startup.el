@@ -2,4 +2,6 @@
 (defconst *is-linux* (eq system-type 'gnu/linux))
 (defconst *is-windows* (or (eq system-type 'ms-dos) (eq system-type 'windows-nt)))
 
+(setq tab-width 4 fill-column 72)
+
 (provide 'init-startup)

@@ -14,4 +14,7 @@
                 (call-interactively #'eglot-code-action-organize-imports))))
   (add-hook 'eglot--managed-mode-hook #'eglot-actions-before-save))
 
+;;(cl-defmethod eglot-execute-command
+;;  ((_server eglot-eclipse-jdt) (_cmd (eql java.apply.workspaceEdit)) arguments))
+
 (provide 'init-lang)
