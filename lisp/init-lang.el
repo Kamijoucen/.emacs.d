@@ -1,6 +1,8 @@
+
+(use-package go-mode)
+
 (use-package eglot
-  :hook ((go-mode
-          java-mode) . eglot-ensure)
+  :hook ((go-mode java-mode) . eglot-ensure)
   :bind (("C-c e f" . #'eglot-format)
          ("C-c e a" . #'eglot-code-actions)
          ("C-c e i" . #'eglot-code-action-organize-imports)
