@@ -11,9 +11,7 @@
   ;; (setq eglot-ignored-server-capabilities '(:documentHighlightProvider))
   (defun eglot-actions-before-save()
     (add-hook 'before-save-hook
-              (lambda ()
-                (call-interactively #'eglot-format)
-                (call-interactively #'eglot-code-action-organize-imports))))
+              (lambda () (call-interactively #'eglot-code-action-organize-imports))))
   (add-hook 'eglot--managed-mode-hook #'eglot-actions-before-save))
 
 ;; https://github.com/joaotavora/eglot/discussions/888#discussioncomment-2386710
