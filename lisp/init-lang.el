@@ -24,24 +24,23 @@
   (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 
 (use-package lsp-ui
-    :after lsp-mode
-    :init
-    (setq lsp-ui-doc-include-signature t
-	      lsp-ui-doc-position 'at-point
-          lsp-ui-sideline-ignore-duplicate t)
-    (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-    (add-hook 'lsp-ui-mode-hook 'lsp-modeline-code-actions-mode)
-    :config
-    (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-    (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+  :ensure t
+  :commands lsp-ui-mode
+  :init
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  :config
+  (setq lsp-ui-peek-enable t)
+  (setq lsp-ui-doc-enable t)
+  (setq lsp-ui-imenu-enable t)
+  (setq lsp-ui-flymake-enable t)
+  (setq lsp-ui-sideline-enable nil)
+  (setq lsp-ui-sideline-ignore-duplicate t))
 
 (use-package lsp-java
   :after lsp-mode
   :if (executable-find "mvn")
   :init
   (use-package request :defer t))
-
-(use-package lsp-treemacs)
 
 (setq lsp-java-vmargs
   '("-noverify"
