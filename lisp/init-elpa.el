@@ -1,12 +1,10 @@
-(setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
-                         ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
-
 (package-initialize)
 
 (setq package-check-signature nil)
 
 (require 'package)
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (unless (bound-and-true-p package--initialized)
   (package-initialize))

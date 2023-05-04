@@ -1,5 +1,8 @@
 ;; LSPPac
 
+
+(use-package yasnippet :config (yas-global-mode))
+
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :init
@@ -37,5 +40,15 @@
   :if (executable-find "mvn")
   :init
   (use-package request :defer t))
+
+(use-package lsp-treemacs)
+
+(setq lsp-java-vmargs
+  '("-noverify"
+    "-Xmx1G"
+    "-XX:+UseG1GC"
+    "-XX:+UseStringDeduplication"
+    "-javaagent:D:/workspace/lombok.jar"
+    "-Xbootclasspath/a:D:/workspace/lombok.jar"))
 
 (provide 'init-lang)
