@@ -7,9 +7,11 @@
 
 (use-package flymake
   :ensure nil
-  :diminish (flymake " Flym.")
-  :hook (prog-mode . flymake-mode)
   :bind (("M-n" . flymake-goto-next-error)
   ("M-p" . flymake-goto-prev-error)))
+
+;; Settings for which-key - suggest next key
+(use-package which-key
+  :hook (after-init . which-key-mode))
 
 (provide 'init-package)

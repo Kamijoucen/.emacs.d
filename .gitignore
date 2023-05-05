@@ -64,3 +64,5 @@ workspace
 *.lsp-session-*
 
 eclipse.jdt.ls
+
+.dap-breakpoints

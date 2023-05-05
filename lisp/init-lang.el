@@ -1,5 +1,23 @@
-;; LSPPac
 
+(use-package go-mode)
+(use-package kotlin-mode)
+(use-package markdown-mode)
+(use-package protobuf-mode)
+(use-package yaml-mode)
+
+(defun prog-extra-modes()
+  "Extra modes when in programming mode."
+
+  (column-number-mode)
+  (display-line-numbers-mode)
+  (electric-pair-mode)
+  (flymake-mode)
+  (hs-minor-mode)
+  (prettify-symbols-mode)
+
+  (use-package highlight-parentheses
+    :hook (prog-mode . highlight-parentheses-mode)))
+(add-hook 'prog-mode-hook 'prog-extra-modes)
 
 (use-package yasnippet :config (yas-global-mode))
 

@@ -1,8 +1,20 @@
 (setq inhibit-startup-screen t)
 
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
+(defun make-ui-cleaner ()
+  "Remove all the unnecessary elements."
+
+  ;; tooltips in echo-aera
+  (when (fboundp 'tooltip-mode) (tooltip-mode -1))
+  (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+  (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+  ;; for menu-bar, only show when runs on GUI mode & macos
+  (when (fboundp 'menu-bar-mode)
+    (if (and (display-graphic-p) (eq system-type 'darwin))
+      (menu-bar-mode +1)
+    (menu-bar-mode -1))))
+
+(add-hook 'window-setup-hook #'make-ui-cleaner)
+(add-hook 'tty-setup-hook #'make-ui-cleaner)
 
 (setq frame-title-format "%b - kamijoucen's Emacs")
 
