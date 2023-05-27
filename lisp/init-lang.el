@@ -65,7 +65,7 @@
     "-Xmx1G"
     "-XX:+UseG1GC"
     "-XX:+UseStringDeduplication"
-    "-javaagent:D:/workspace/lombok.jar"
-    "-Xbootclasspath/a:D:/workspace/lombok.jar"))
+    "-javaagent:/home/kamijoucen/lombok.jar"
+    "-Xbootclasspath/a:/home/kamijoucen/lombok.jar"))
 
 (provide 'init-lang)

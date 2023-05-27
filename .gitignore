@@ -66,3 +66,5 @@ workspace
 eclipse.jdt.ls
 
 .dap-breakpoints
+
+eln-cache/
